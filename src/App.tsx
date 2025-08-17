@@ -10,7 +10,9 @@ function App() {
 
   const handleChat = () => {
     if (whatsappNumber) {
-      window.open(`https://wa.me/${whatsappNumber}`, "_blank");
+      const legacyUrl = `whatsapp://send?phone=${whatsappNumber}`;
+
+      window.open(legacyUrl, "_blank");
     } else {
       console.log("Please enter a WhatsApp number.");
     }
