@@ -18,6 +18,16 @@ function App() {
     }
   };
 
+  const handleChatBusiness = () => {
+    if (whatsappNumber) {
+      const legacyUrl = `whatsappbusiness://send?phone=${whatsappNumber}`;
+
+      window.open(legacyUrl, "_blank");
+    } else {
+      console.log("Please enter a WhatsApp number.");
+    }
+  };
+
   return (
     <div className="grid place-content-center min-h-screen p-4">
       <div className="card bg-base-100 w-full max-w-sm md:max-w-lg shadow-sm mx-auto">
@@ -43,7 +53,10 @@ function App() {
           </div>
           <div className="card-actions justify-end">
             <button className="btn btn-primary" onClick={handleChat}>
-              Chat
+              Chat Biasa
+            </button>
+            <button className="btn btn-primary" onClick={handleChatBusiness}>
+              Chat Bisnis
             </button>
           </div>
         </div>
